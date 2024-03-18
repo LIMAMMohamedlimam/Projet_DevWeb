@@ -1,0 +1,51 @@
+
+
+body{
+  margin: 0;
+}
+
+div{
+  margin:0;
+  display: inline-block;
+}
+
+.top-bar{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.right{
+  padding: 10px 20px 10px 140px;
+  height: 80px;
+  flex: 1;
+  background-color: blue;
+}
+
+.center{
+  justify-content: left;
+  vertical-align :middle;
+  top: 0;
+  height: 100px;
+  display: flex;
+  flex: 4;
+  background-color: black;
+}
+
+.Searchbar{
+  
+ 
+  height: 50px;
+  border: 2px solid red;
+  float: left;
+
+}
+
+
+.left{
+  padding: 10px 20px 10px 140px;
+  height: 80px;
+  flex: 1;
+  background-color: red;
+}
