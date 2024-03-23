@@ -1,0 +1,185 @@
+
+
+
+body{
+  margin: 0;
+}
+
+div{
+  margin:0;
+  display: inline-block;
+}
+
+
+/*
+top design 
+logo + search bar + navgation buttons
+*/
+
+
+.top-bar{
+  height: 110px;
+  background-color: #2660aa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*
+logo design
+*/
+
+.left{
+  height: 100px;
+  flex: 1;
+  display: flex;
+ 
+
+}
+
+/*
+logo picture
+*/
+
+#cy-logo{
+  position: relative;
+  top: 4px;
+  left: 4px;
+  height: 95% ;
+  object-fit: contain;
+  left: 0;
+}
+
+/*
+logo text
+*/
+
+#cy-play-logo-Text{
+  margin: 0;
+  padding-top: 18px ;
+  display: inline-block;
+  font-family : Roboto , Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+  color: white;
+
+}
+
+
+/*
+middle part of the header design
+*/
+
+.center{
+  justify-content: right;
+  vertical-align: middle;
+  top: 0;
+  height: 100px;
+  display: flex;
+  flex: 1;
+}
+
+/*
+search box design 
+*/
+
+
+#search-box{
+  margin-top: 30px;
+  height: 45px;
+  width: 400px;
+  padding-right: 40px;
+  border-radius: 10px;
+  border: 1px #2660aa;
+}
+
+#search-box:hover{
+  background-color: white;
+}
+
+#search-button{
+  position: relative;
+  margin-top: 30px;
+  height: 45px;
+  width: 45px;
+  margin-left: 6px;
+  background-color: white ;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#search-button  :hover{
+  background-color: white;
+}
+
+#search-icon{
+  margin-top: 2px;
+  height: 60%;
+  width: 80%;
+}
+
+
+
+
+.right{
+  align-items: center;
+  height: 100px;
+  flex: 1;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.basket-button{
+  vertical-align: middle;
+  background-color: #2660aa;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+}
+
+#basket-icon{
+  margin: 0;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.account-div{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+#account{
+  border-radius: 25px;
+  background-color: black;
+  height: 50px;
+  width: 50px;
+
+}
+
+#account-name{
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  font-family: Roboto , Arial, Helvetica, sans-serif;
+  position: relative;
+  bottom : 8px;
+  left: 20px;
+}
+
+#profile-picture{
+  height: 20px;
+  width: 20px;
+  border-radius: 25px;
+  border: 2px solid red;
+}
