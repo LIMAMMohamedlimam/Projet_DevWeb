@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Formulaire de contact CY PC-Play</title>
+    <link rel="stylesheet" href="/src/css/contact-style.css">
+</head>
+
+
+<body>
+    <!-- Le header -->
+    <header></header>
+
+    <!-- Formulaire de contact -->
+    <main>
+        <center><h1>Contactez-nous, on vous écoute</h1></center><br><br>
+
+        <form action="" method="post">
+            <label for="date">Date de contact :</label>
+            <input id="date" type="text" name="date"><br>
+            
+            <label for="nom">Nom :</label>
+            <input id="nom" type="text" name="nom"><br>
+            
+            <label for="prenom">Prénom :</label>
+            <input id="prenom" type="text" name="prenom"><br>
+            
+            <label for="mail">Email :</label>
+            <input id="mail" type="text" name="mail"><br>
+            
+            <span>Genre :</span>
+            <input id="femme" type="radio" name="genre" value="Femme">
+            <label for="femme">Femme</label>
+            <input id="homme" type="radio" name="genre" value="Homme">
+            <label for="homme">Homme</label>
+            <input id="autre" type="radio" name="genre" value="Autre">
+            <label for="autre">Autre</label>
+            <br><br>
+            
+            <label for="naissance">Date de naissance:</label>
+            <input id="naissance" type="text" name="naissance"><br>
+            
+            <label for="fonction">Fonction :</label>
+            <select id="fonction" name="fonction">
+                <option value="Particulier">Particulier</option>
+                <option value="Pro Gamer">Pro Gamer</option>
+                <option value="Fournisseur">Fournisseur</option>
+            </select><br>
+            
+            <label for="sujet">Sujet :</label>
+            <input id="sujet" type="text" name="sujet"><br>
+            
+            <label for="message">Contenu :</label>
+            <textarea id="message" name="message" rows="5" cols="75"></textarea><br>
+            
+            <center><input type="submit" value="Envoyer"></center>
+        </form>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+</body>
+</html>
