@@ -27,6 +27,8 @@ logo + search bar + navgation buttons
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 /*
@@ -37,7 +39,7 @@ logo design
   height: 100px;
   flex: 1;
   display: flex;
- 
+  align-items: center;
 
 }
 
@@ -46,12 +48,9 @@ logo picture
 */
 
 #cy-logo{
-  position: relative;
-  top: 4px;
-  left: 4px;
-  height: 95% ;
+  height: 95%;
   object-fit: contain;
-  left: 0;
+  margin-right: 10px; 
 }
 
 /*
@@ -60,12 +59,9 @@ logo text
 
 #cy-play-logo-Text{
   margin: 0;
-  padding-top: 18px ;
-  display: inline-block;
-  font-family : Roboto , Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 60px;
   letter-spacing: 10px;
-  padding-left: 10px;
   color: white;
 
 }
@@ -76,12 +72,9 @@ middle part of the header design
 */
 
 .center{
-  justify-content: right;
-  vertical-align: middle;
-  top: 0;
-  height: 100px;
   display: flex;
   flex: 1;
+  align-items: center;
 }
 
 /*
@@ -90,14 +83,13 @@ search box design
 
 
 #search-box{
-  font-size: 20px;
-  margin-top: 30px;
+  color: rgb(116, 116, 116);
+  font-size: 18px;
   height: 45px;
   width: 400px;
-  padding-left:10px ;
-  padding-right: 40px;
+  padding: 0 10px;
   border-radius: 10px;
-  border: 1px #2660aa;
+  border: 1px solid transparent;
 }
 
 #search-box:hover{
@@ -105,15 +97,16 @@ search box design
 }
 
 #search-button{
-  position: relative;
-  margin-top: 30px;
   height: 45px;
   width: 45px;
-  margin-left: 6px;
-  background-color: white ;
+  margin-left: 10px;
+  background-color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 50%; 
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #search-button  :hover{
@@ -121,8 +114,7 @@ search box design
 }
 
 #search-icon{
-  margin-top: 2px;
-  height: 60%;
+  
   width: 80%;
 }
 
@@ -130,74 +122,51 @@ search box design
 
 
 .right{
-  align-items: left;
-  height: 100px;
-  flex: 1;
+  justify-content: flex-end; 
+  flex: 1 ;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
+  align-items: center; 
 }
-
-
-
 
 .account-div{
-  margin-top: 30px;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  vertical-align: middle;
+  align-items: center; 
+  margin-left: 20px;
 }
+
+
+
 
 .basket-button{
+  background-color: #2660aa;
   border: none;
   border-radius: 12px;
-  position: relative;
-  top: 26px;
-  margin: 0;
-  padding-left: 9px;
-  margin-right: 60px ;
-  height: 55px;
-  width:  55px;
   font-size: 35px;
   cursor: pointer;
-  background-color: #23589c;
+  height: 55px;
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.account-div{
-  margin-right:40px ;
-}
-
-#account-button{
-  padding: 0;
-  cursor: pointer;
-  border-radius: 25px;
+#account-button, #profile-picture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; 
   background-color: white;
-  height: 50px;
-  width: 50px;
-
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#account-name{
-  display: inline-block;
-  color: white;
+
+#account-name {
+  margin-right: 40px;
+  margin-left: 10px; 
   font-size: 20px;
-  font-family: Roboto , Arial, Helvetica, sans-serif;
-  position: relative;
-  bottom : 8px;
-  left: 20px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
-
-#profile-picture{
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-}
-
-
-
-.top-bar-contact{
-  top: 0;
-}
-
