@@ -16,15 +16,19 @@ window.onload = function() {
     }
   };
   
-  document.querySelectorAll('skew-menu').forEach(item => {
-      item.addEventListener('mouseenter', () => {
-          const dropdown = item.querySelector('.dropdown-content');
-          dropdown.style.display = 'block';
-      });
-  
-      item.addEventListener('mouseleave', () => {
-          const dropdown = item.querySelector('.dropdown-content');
-          dropdown.style.display = 'none';
-      });
-  });
-  
+// Query all 'li' elements within elements with the class 'skew-menu'
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    // Add a 'mouseenter' event listener to each 'li' element
+    item.addEventListener('mouseenter', () => {
+        // Find the '.dropdown-content' within the hovered 'li' and show it
+        const dropdown = item.querySelector('.dropdown-content');
+        dropdown.style.display = 'block';
+    });
+
+    // Add a 'mouseleave' event listener to each 'li' element
+    item.addEventListener('mouseleave', () => {
+        // Find the '.dropdown-content' within the hovered 'li' and hide it
+        const dropdown = item.querySelector('.dropdown-content');
+        dropdown.style.display = 'none';
+    });
+});
