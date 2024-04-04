@@ -52,3 +52,8 @@ INSERT INTO `product` (`name`, `description`, `imagelink`, `stock`, `review`, `p
 INSERT INTO `fournisseur` (`name`) VALUES
 ('Tech Gadgets Inc.'),
 ('Smart Electronics Ltd.');
+
+INSERT INTO `commande` (`user_id`, `product_id`, `order_date`, `quantity`, `status`) VALUES
+(1, 1, '2024-04-05 10:00:00', 1, 'Pending'),
+(1, 2, '2024-04-05 10:15:00', 2, 'Shipped'),
+(2, 1, '2024-04-06 09:30:00', 1, 'Delivered');
