@@ -1,33 +1,39 @@
 <?php
+
+header('Content-Type: application/json');
+
 // Database connection variables
-$servername = "your_server_name";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database_name";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cy-play";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    // Return a JSON-encoded error if the connection fails
+    echo json_encode(['error' => 'Database connection failed']);
+    exit(); // Stop script execution after an error
 }
 
-$sql = "SELECT name, description, image_link FROM product WHERE MONTH(sales_date) = MONTH(CURRENT_DATE()) AND YEAR(sales_date) = YEAR(CURRENT_DATE()) ORDER BY sales_count DESC LIMIT 1";
+
+$sql = "SELECT name, description, imagelink, max(nbofachat) AS total_quantity_sold
+FROM product 
+GROUP BY name, description, imagelink
+ORDER BY total_quantity_sold DESC
+LIMIT 1";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo '<div class="month-product-container">';
-        echo '<img id="month-product-image" src="' . $row["image_link"] . '" alt="Featured Game">';
-        echo '<h2 style="color: rgb(61, 61, 61); font-size: 22px;" id="month-product-name">' . $row["name"] . '</h2>';
-        echo '<p style="color: rgb(61, 61, 61);font-size: 16px;" id="month-product-description">' . $row["description"] . '</p>';
-        echo '</div>';
-    }
+    $row = $result->fetch_assoc();
+    echo json_encode($row); // Encode the result as a JSON object
 } else {
-    echo "0 results";
+    echo json_encode(["message" => "No results found"]); // Return an error message if no results
 }
+
 $conn->close();
 
 ?>

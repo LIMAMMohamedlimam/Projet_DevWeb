@@ -90,6 +90,8 @@ search box design
 
 
 #search-box{
+  position: relative;
+  left: -49px;
   font-size: 20px;
   margin-top: 30px;
   height: 45px;
@@ -105,6 +107,7 @@ search box design
 }
 
 #search-button{
+  left: -50px;
   position: relative;
   margin-top: 30px;
   height: 45px;
@@ -187,6 +190,7 @@ search box design
   bottom : 8px;
   left: 20px;
   cursor: pointer;
+  top: 14px;
 }
 
 #profile-picture{
