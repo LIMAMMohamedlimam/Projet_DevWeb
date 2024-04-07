@@ -25,7 +25,7 @@ html,body{
 }
 .wrapper{
   position: relative;
-  top: 80px;
+  top: 0px;
   width: 380px;
   background: #fff;
   border-radius: 15px;
@@ -51,7 +51,7 @@ html,body{
   margin-top: 20px;
   position: relative;
 }
-.wrapper form .field input{
+.wrapper form .field input , #registerbutton{
   height: 100%;
   width: 100%;
   outline: none;
@@ -62,7 +62,7 @@ html,body{
   transition: all 0.3s ease;
 }
 .wrapper form .field input:focus,
-form .field input:valid{
+form .field input:valid , #registerbutton:focus , #registerbutton valid{
   border-color: #4158d0;
 }
 .wrapper form .field label{
@@ -77,7 +77,9 @@ form .field input:valid{
   transition: all 0.3s ease;
 }
 form .field input:focus ~ label,
-form .field input:valid ~ label{
+form .field input:valid ~ label,
+#registerbutton :focus ~label,
+#registerbutton:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #4158d0;
@@ -97,7 +99,7 @@ form .content .checkbox{
   align-items: center;
   justify-content: center;
 }
-form .content input{
+form .content input , #registerbutton{
   width: 15px;
   height: 15px;
   background: red;
@@ -110,7 +112,7 @@ form .content label{
 form .content .pass-link{
   color: "";
 }
-form .field input[type="submit"]{
+form .field input[type="submit"] , #registerbutton{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -121,7 +123,7 @@ form .field input[type="submit"]{
   background: linear-gradient(-135deg, var(--bgc), rgb(34, 53, 105));
   transition: all 0.3s ease;
 }
-form .field input[type="submit"]:active{
+form .field input[type="submit"]:active, #registerbutton:active{
   transform: scale(0.95);
 }
 form .signup-link{
@@ -137,4 +139,22 @@ form .signup-link a{
 form .pass-link a:hover,
 form .signup-link a:hover{
   text-decoration: underline;
+}
+
+.wrapper form .field  input[type="submit"], #registerbutton {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, var(--bgc), rgb(34, 53, 105));
+  transition: all 0.3s ease;
+}
+
+.wrapper form .field input[type="submit"]:active, #registerbutton:active {
+  transform: scale(0.95);
 }

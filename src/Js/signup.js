@@ -1,6 +1,6 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the form from submitting until validation is complete
-
+  alert("hello");
   // Step 1: Get form field values
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
@@ -9,7 +9,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   var pronoun = document.getElementById('pronoun').value;
 
   // Step 2: Check for empty fields
-  if (!name || !email || !password || !confirmPassword || !pronoun) {
+  if (!name || !email || !password || !confirmPassword ) {
       alert('All fields are required.');
       return; // Stop the function if any field is empty
   }
@@ -37,5 +37,5 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   // If all checks pass, submit the form. You might do this by sending an AJAX request to your PHP script, or you might allow the form to submit normally.
   // For this example, we'll just log a message and then submit the form normally.
   console.log('Validation passed. Submitting form...');
-  this.submit(); // This refers to the form element, and submit() is the form's submit action
+  console.log(name) // This refers to the form element, and submit() is the form's submit action
 });
