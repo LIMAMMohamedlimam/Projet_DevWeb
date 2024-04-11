@@ -187,10 +187,9 @@ search box design
   font-size: 20px;
   font-family: Roboto , Arial, Helvetica, sans-serif;
   position: relative;
-  bottom : 8px;
   left: 20px;
   cursor: pointer;
-  top: 14px;
+  top: -6px;
 }
 
 #profile-picture{

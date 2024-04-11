@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Formulaire de contact CY PC-Play</title>
     <link rel="stylesheet" href="/src/css/contact-style.css">
+    
 </head>
-
-
 <body>
     <!-- Le header -->
     <header></header>
@@ -15,50 +13,45 @@
     <main>
         <center><h1>Contactez-nous, on vous écoute</h1></center><br><br>
 
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return validateForm()">
             <label for="date">Date de contact :</label>
-            <input id="date" type="text" name="date"><br>
+            <input id="date" type="text" name="date">
+            <span id="dateError"></span><br>
             
             <label for="nom">Nom :</label>
-            <input id="nom" type="text" name="nom"><br>
+            <input id="nom" type="text" name="nom">
+            <span id="nomError"></span><br>
             
             <label for="prenom">Prénom :</label>
-            <input id="prenom" type="text" name="prenom"><br>
+            <input id="prenom" type="text" name="prenom">
+            <span id="prenomError"></span><br>
             
             <label for="mail">Email :</label>
-            <input id="mail" type="text" name="mail"><br>
+            <input id="mail" type="text" name="mail">
+            <span id="mailError"></span><br>
             
-            <span>Genre :</span>
-            <input id="femme" type="radio" name="genre" value="Femme">
-            <label for="femme">Femme</label>
-            <input id="homme" type="radio" name="genre" value="Homme">
-            <label for="homme">Homme</label>
-            <input id="autre" type="radio" name="genre" value="Autre">
-            <label for="autre">Autre</label>
-            <br><br>
+            <!-- Radio buttons and other inputs -->
             
             <label for="naissance">Date de naissance:</label>
-            <input id="naissance" type="text" name="naissance"><br>
+            <input id="naissance" type="text" name="naissance">
+            <span id="naissanceError"></span><br>
             
-            <label for="fonction">Fonction :</label>
-            <select id="fonction" name="fonction">
-                <option value="Particulier">Particulier</option>
-                <option value="Pro Gamer">Pro Gamer</option>
-                <option value="Fournisseur">Fournisseur</option>
-            </select><br>
+            <!-- Select dropdown -->
             
             <label for="sujet">Sujet :</label>
-            <input id="sujet" type="text" name="sujet"><br>
+            <input id="sujet" type="text" name="sujet">
+            <span id="sujetError"></span><br>
             
             <label for="message">Contenu :</label>
-            <textarea id="message" name="message" rows="5" cols="75"></textarea><br>
+            <textarea id="message" name="message" rows="5" cols="75"></textarea>
+            <span id="messageError"></span><br>
             
             <center><input type="submit" value="Envoyer"></center>
         </form>
-        
     </main>
 
     <!-- Footer -->
     <footer></footer>
+    <script src="/src/Js/contact.js"></script>
 </body>
 </html>

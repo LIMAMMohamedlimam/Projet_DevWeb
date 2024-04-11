@@ -1,6 +1,6 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the form from submitting until validation is complete
-  alert("hello");
+
   // Step 1: Get form field values
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
@@ -9,7 +9,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   var pronoun = document.getElementById('pronoun').value;
 
   // Step 2: Check for empty fields
-  if (!name || !email || !password || !confirmPassword ) {
+  if (!name || !email || !password || !confirmPassword ||  !pronoun ) {
       alert('All fields are required.');
       return; // Stop the function if any field is empty
   }
@@ -34,8 +34,24 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   }
 
   // Step 6: Submit form
-  // If all checks pass, submit the form. You might do this by sending an AJAX request to your PHP script, or you might allow the form to submit normally.
-  // For this example, we'll just log a message and then submit the form normally.
-  console.log('Validation passed. Submitting form...');
-  console.log(name) // This refers to the form element, and submit() is the form's submit action
+  var formData = {name: name, email: email, password: password, pronoun: pronoun};
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/src/php/registerUser.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+          var response = JSON.parse(xhr.responseText);
+          if (response.status === 'error') {
+              alert(response.message); // Display error message
+          } else {
+            
+            window.location.href = "/src/modules/acceuil.html" ;
+
+          }
+      }
+  };
+  xhr.send(JSON.stringify(formData));
+
+ 
 });

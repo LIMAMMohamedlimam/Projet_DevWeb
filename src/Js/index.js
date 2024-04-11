@@ -73,6 +73,20 @@ document.querySelectorAll('.skew-menu li').forEach(item => {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    var basketButton = document.querySelector('.basket-button');
+    
+    basketButton.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-content').style.display = "block";
+    });
+
+    basketButton.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-content').style.display = "none";
+    });
+});
+
+
 document.querySelectorAll('.navigation-h1').forEach(item => {
     item.addEventListener('click', () => {
         // Construct the URL based on the data-name attribute
