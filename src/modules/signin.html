@@ -41,13 +41,14 @@
   <div class="title">
      Login Form
   </div>
-  <form action="#">
+  
+  <form id="loginForm" >
      <div class="field">
-        <input type="text" required>
+        <input id="email" type="text" value="john.doe@example.com"  required>
         <label>Email Address</label>
      </div>
      <div class="field">
-        <input type="password" required>
+        <input id="password" type="password" value="password123" required>
         <label>Password</label>
      </div>
      <div class="content">
@@ -67,5 +68,6 @@
      </div>
   </form>
 </div>
+<script src="/src/Js/signin.js"></script>
 </body>
 </html>
