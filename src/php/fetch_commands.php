@@ -7,37 +7,62 @@ header('Content-Type: application/json'); // Set the header to return JSON conte
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 
+
+
     // Database connection parameters
     $host = 'localhost';
     $dbname = 'cy-play';
     $username = 'root';
     $password = '';
 
-    try {
-        // Create a new PDO connection
-        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+   // Create a new PDO instance
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-        // Set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Prepare a SQL query to fetch all commands for the current user
+    $stmt = $pdo->prepare('SELECT * FROM commande WHERE user_id = :userId AND status = "pending"');
+    $stmt->execute(['userId' => $userId]);
 
-        // Prepare the SQL query
-        $stmt = $conn->prepare("SELECT * FROM commande c , user u WHERE c.user_id = u.id and ");
-        $stmt->bindParam(':user_id', $userId);
+    // Fetch all commands as an associative array
+    $commands = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Execute the query
-        $stmt->execute();
+    //get the name of the products the responding with json file
 
-        // Fetch all the user's commands
-        $commands = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($commands as $key => $command) {
+        $stmt = $pdo->prepare('SELECT * FROM product WHERE id = :productId');
+        $stmt->execute(['productId' => $command['product_id']]);
+        $product = $stmt->fetch(PDO::FETCH_ASSOC);
+        $commands[$key]['product'] = $product;
 
-        // Return the commands as JSON
-        echo json_encode($commands);
-    } catch (PDOException $e) {
-        // Return an error message if the database connection or query fails
-        echo json_encode(['error' => $e->getMessage()]);
     }
+    
+    // Fetch all the products data from the product table appearing in the commands
+    $productIds = array_column($commands, 'product_id');
+    $stmt = $pdo->prepare('SELECT * FROM product WHERE id IN (' . implode(',', $productIds) . ')');
+    $stmt->execute();
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Associate the products with the corresponding commands
+    foreach ($commands as $key => $command) {
+        foreach ($products as $product) {
+            if ($command['product_id'] == $product['id']) {
+                $commands[$key]['product'] = $product;
+                break;
+            }
+        }
+    }
+
+
+    
+
+
+    // Return the products as a JSON object
+    // 
+    echo json_encode($commands);
+
+
 } else {
-    // Return an error message if the user is not logged in or the session variable is not set
-    echo json_encode(['error' => 'User not logged in or session variable not set']);
+    // Return an error message if the user is not logged in
+    echo json_encode(['error' => 'You are not logged in']);
 }
+
 ?>

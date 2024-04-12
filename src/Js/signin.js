@@ -30,7 +30,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             console.log('Response Text:', xhr.responseText); // Log response text
 
             if (xhr.status == 200) {
-                // Continue with processing the response
+                // Redirect to home page
+                window.location.href = '/src/modules/acceuil.html';
             } else {
                 // Handle error case
                 alert('Error with request: ' + xhr.statusText);

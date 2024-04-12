@@ -25,12 +25,21 @@ $email = $data['email'];
 $password = $data['password']; // You should use password hashing in production
 
 // Prepare and bind
-$stmt = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+$stmt = $conn->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
 $stmt->bind_param("ss", $email, $password);
 
 // Execute the query
 $stmt->execute();
 $result = $stmt->get_result();
+
+// query to get the user id
+$stmt = $conn->prepare("SELECT id FROM user WHERE email = ? AND password = ?");
+$stmt->bind_param("ss", $email, $password);
+$stmt->execute();
+$result_userId = $stmt->get_result();
+$user_id = $result_userId->fetch_assoc();
+$_SESSION['user_id'] = $user_id['id'];
+
 
 // Check if user exists in the database
 if ($result->num_rows > 0) {
