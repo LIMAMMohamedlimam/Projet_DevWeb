@@ -19,11 +19,18 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT name, description, imagelink, max(nbofachat) AS total_quantity_sold
+/* $sql = "SELECT name, description, imagelink, max(nbofachat) AS total_quantity_sold
 FROM product 
 GROUP BY name, description, imagelink
 ORDER BY total_quantity_sold DESC
-LIMIT 1";
+LIMIT 1"; */
+
+$sql = "SELECT p.name, p.description, pi.image_url, max(p.nbofachat) AS total_quantity_sold
+ FROM product p
+ JOIN productimages pi ON p.id = pi.product_id
+ GROUP BY p.name, p.description, pi.image_url
+ ORDER BY total_quantity_sold DESC
+ LIMIT 1" ;
 
 $result = $conn->query($sql);
 
