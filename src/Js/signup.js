@@ -1,5 +1,16 @@
+
+// empty all the fields
+document.getElementById('name').value = '';
+document.getElementById('email').value = '';
+document.getElementById('password').value = '';
+document.getElementById('confirmPassword').value = '';
+document.getElementById('pronoun').value = '';
+
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the form from submitting until validation is complete
+
+  
 
   // Step 1: Get form field values
   var name = document.getElementById('name').value;
@@ -7,6 +18,9 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   var password = document.getElementById('password').value;
   var confirmPassword = document.getElementById('confirmPassword').value;
   var pronoun = document.getElementById('pronoun').value;
+
+  // empty the fields
+  
 
   // Step 2: Check for empty fields
   if (!name || !email || !password || !confirmPassword ||  !pronoun ) {
