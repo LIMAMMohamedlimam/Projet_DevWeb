@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* Common font for consistency */
+}
+
+.Product-list {
+  list-style: none;
+  border: 5px solid lime;
+  padding: 20px;
+}
+
+.Product {
+  display: flex;
+  flex-direction: column; /* Stack children vertically on mobile */
+  border: 5px solid red;
+  margin-top: 20px;
+  overflow: hidden; /* Ensures no overflow of child elements */
+}
+
+picture {
+  display: block;
+  width: 100%; /* full width of parent */
+  border: 5px solid blue;
+}
+
+#product-image {
+  display: block;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  background-image: url('path_to_your_image.jpg'); /* Replace with actual image path */
+  background-size: cover; /* Cover the area of the element */
+  background-position: center; /* Center the background image */
+}
+
+.info {
+  border: 5px solid orange;
+  padding: 10px;
+}
+
+.title, .description {
+  border: 5px solid #ff0066;
+  padding: 5px;
+}
+
+.title {
+  font-size: 24px; /* Larger font for title */
+  font-weight: bold;
+  color: #333; /* Dark grey color for text */
+}
+
+.description {
+  font-size: 14px;
+  color: #666; /* Lighter grey color for text */
+}
+
+@media (min-width: 500px) {
+  .Product {
+    flex-direction: row; /* Horizontal layout for larger screens */
+  }
+
+  .info {
+    flex-grow: 1;
+    padding-left: 20px; /* Space between image and info section */
+  }
+
+  .Product:not(:first-of-type) {
+    margin-top: 20px;
+  }
+}

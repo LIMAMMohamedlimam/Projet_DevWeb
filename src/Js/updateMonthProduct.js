@@ -1,5 +1,13 @@
 
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    // get the element
    
 
 function fetchAndUpdateProduct() {
@@ -28,9 +36,14 @@ function fetchAndUpdateProduct() {
                 console.error('Error fetching product data:', error);
             });
     }
+
     
+
+
     // Call the function immediately to update the product details when the page loads
     fetchAndUpdateProduct();
+
+
     
     
 })    

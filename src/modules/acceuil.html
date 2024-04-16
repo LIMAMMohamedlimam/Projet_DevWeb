@@ -12,6 +12,7 @@
     <!-- CSS stylesheets for header and main styles -->
     <link rel="stylesheet" href="/src/css/Header.css">
     <link rel="stylesheet" href="/src/css/acceuil-style.css">
+    <link rel="stylesheet" href="/src/css/catalogue.css">
     
     <title>Document</title>
 </head>
@@ -85,37 +86,37 @@
         <!-- Skew menu with navigation items -->
         <nav class="skew-menu">
             <ul>
-              <li><a href="#">Gaming PC</a>
+              <li><a href="#" category-name = "Gaming PC">Gaming PC</a>
                 <div class="dropdown-content">
-                    <a href="#">MSI</a>
-                    <a href="#">HP</a>
-                    <a href="#">Dell</a>
+                    <a href="#" category-name = "MSI">MSI</a>
+                    <a href="#" category-name = "HP">HP</a>
+                    <a href="#" category-name = "Dell">Dell</a>
                 </div>
             </li>
 
             
               
-            <li><a href="#">Games</a>
+            <li><a href="#" category-name = "Games">Games</a>
                 <div class="dropdown-content">
-                  <a href="#">RPG</a>
-                  <a href="#">Battle Royale</a>
-                  <a href="#">Simulation</a>
+                  <a href="#" category-name = "RPG">RPG</a>
+                  <a href="#" category-name = "Battle Royale">Battle Royale</a>
+                  <a href="#" category-name = "Simulation">Simulation</a>
                 </div>
             </li>
               <li>
-                <a href="#">Accessories</a>
+                <a href="#" category-name = "Accessories">Accessories</a>
                 <div class="dropdown-content">
-                  <a href="#">console</a>
-                  <a href="#">mouse</a>
-                  <a href="#">keyboards</a>
+                  <a href="#" category-name = "console">console</a>
+                  <a href="#" category-name = "mouse">mouse</a>
+                  <a href="#" category-name = "keyboards">keyboards</a>
                 </div>
             </li>
               <li>
-                <a href="#">Components</a>
+                <a href="#" category-name = "Components">Components</a>
                 <div class="dropdown-content">
-                  <a href="#">Mother board</a>
-                  <a href="#">CPU</a>
-                  <a href="#">Simulation</a>
+                  <a href="#" category-name = "Mother board">Mother board</a>
+                  <a href="#" category-name = "CPU">CPU</a>
+                  <a href="#" category-name = "Simulation">Simulation</a>
                 </div>
             </li>
               
@@ -130,7 +131,83 @@
         <h2 style="color: rgb(61, 61, 61); font-size: 22px; " id="month-product-name">Month Product name</h2>
         <p style="color: rgb(61, 61, 61);font-size: 16px; " id="month-product-description">Month Product description</p>
     </div>
-        <!-- Placeholder for additional content -->
+        
+    <!-- Product display area -->
+    <ul class="Product-list">
+<!-- 
+        <li class="Product">
+          
+          <picture class="image">
+            <img id="product-image" src="https://placehold.it/600">
+          </picture>
+          
+          <div class="info">
+            <h2 class="title">Product title</h2>
+            
+            <p class="description">Product description</p>
+          </div>
+          
+        </li>
+
+        <li class="Product">
+          
+          <picture class="image">
+            <img id="product-image" src="https://placehold.it/600">
+          </picture>
+          
+          <div class="info">
+            <h2 class="title">Product title</h2>
+            
+            <p class="description">Product description</p>
+          </div>
+          
+        </li>
+
+        <li class="Product">
+          
+          <picture class="image">
+            <img id="product-image" src="https://placehold.it/600">
+          </picture>
+          
+          <div class="info">
+            <h2 class="title">Product title</h2>
+            
+            <p class="description">Product description</p>
+          </div>
+          
+        </li>
+
+        <li class="Product">
+          
+          <picture class="image">
+            <img id="product-image" src="https://placehold.it/600">
+          </picture>
+          
+          <div class="info">
+            <h2 class="title">Product title</h2>
+            
+            <p class="description">Product description</p>
+          </div>
+          
+        </li>
+      
+      
+        <li class="Product">
+          
+          <picture class="image">
+            <img id="product-image" src="https://placehold.it/600">
+          </picture>
+          
+          <div class="info">
+            <h2 class="title">Product title</h2>
+            
+            <p class="description">Product description</p>
+          </div>
+          
+        </li> -->
+      
+      </ul>
+
     </main>
 
     <!-- Footer with contact info and copyright -->
@@ -145,6 +222,7 @@
     <script src="/src/Js/updateMonthProduct.js"></script>
     <script src="/src/Js/session_handler.js"></script>
     <script src="/src/Js/fetch_commands.js"></script>
+    <script src="/src/Js/fetch_product.js"></script>
     
 
 </body>
