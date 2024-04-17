@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/src/css/Header.css">
     <link rel="stylesheet" href="/src/css/acceuil-style.css">
     <link rel="stylesheet" href="/src/css/catalogue.css">
+    <link rel="stylesheet" href="/src/css/logoutMenu.css">
     
     <title>Document</title>
 </head>
@@ -46,11 +47,19 @@
             
 
             <div class="account-div">
-                <button id="account-button">
-                    <img id="profile-picture" src="/src/pictures/icons/profileicon.webp" alt="">
-                </button>
-                <p id="account-name">Se Connecter</p>
-            </div>
+              <button id="account-button">
+                  <img id="profile-picture" src="/src/pictures/icons/profileicon.webp" alt="">
+              </button>
+              <!-- Hoverable text element -->
+              <p id="account-name">Se Connecter</p>
+              <!-- Dropdown Menu -->
+              <div id="logout-dropdown" style="display: none;">
+                  <ul>
+                      <li><a id="logout" href="#">Log Out</a></li>
+                  </ul>
+              </div>
+          </div>
+            
         </div>
     </div>
 
@@ -223,6 +232,7 @@
     <script src="/src/Js/session_handler.js"></script>
     <script src="/src/Js/fetch_commands.js"></script>
     <script src="/src/Js/fetch_product.js"></script>
+    <script src="/src/Js/user_management.js"></script>
     
 
 </body>

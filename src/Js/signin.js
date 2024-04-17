@@ -1,3 +1,6 @@
+
+
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
     // Step 1: Get form field values
