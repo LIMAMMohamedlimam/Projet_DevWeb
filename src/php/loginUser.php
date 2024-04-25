@@ -24,6 +24,9 @@ $data = json_decode($json, true);
 $email = $data['email'];
 $password = $data['password']; // You should use password hashing in production
 
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$password = $hashed_password
+
 // Prepare and bind
 $stmt = $conn->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
 $stmt->bind_param("ss", $email, $password);
