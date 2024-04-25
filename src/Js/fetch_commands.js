@@ -3,16 +3,20 @@
   fetch('/src/php/fetch_commands.php')
     .then(response => response.json())
     .then(data => {
-      // Process the received JSON data here
       console.log(data);
+      // Process the received JSON data here
       if (data!==null ) {
-        console.log(data.length);
-        console.log('Data is not empty');
         // Get the div that will contain the commands that's inside the basket-button
         const commandContainer = document.querySelector('.basket-button .dropdown-content');
 
         // Clear the innerHtml of the div
         commandContainer.innerHTML = '';
+
+        if(data.length === 0) {
+          const liElement = document.createElement('li');
+          liElement.textContent = 'No commands yet';
+          commandContainer.appendChild(liElement);
+        }
   
         data.forEach(command => {
           const liElement = document.createElement('li');

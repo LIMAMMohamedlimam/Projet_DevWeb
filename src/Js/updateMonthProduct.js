@@ -1,5 +1,13 @@
 
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    // get the element
    
 
 function fetchAndUpdateProduct() {
@@ -15,11 +23,11 @@ function fetchAndUpdateProduct() {
             
             .then(data => {
                 // Ensure the data contains the product details
-              
-                if(data.name && data.description && data.imagelink) {
+                console.log(data);
+                if(data.name && data.description && data.image_url) {
                     document.getElementById('month-product-name').textContent = data.name;
                     document.getElementById('month-product-description').textContent = data.description;
-                    document.getElementById('month-product-image').src = data.imagelink;
+                    document.getElementById('month-product-image').src = data.image_url;
                 } else {
                     console.error('No product data found');
                 }
@@ -28,9 +36,14 @@ function fetchAndUpdateProduct() {
                 console.error('Error fetching product data:', error);
             });
     }
+
     
+
+
     // Call the function immediately to update the product details when the page loads
     fetchAndUpdateProduct();
+
+
     
     
 })    

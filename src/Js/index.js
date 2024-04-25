@@ -1,5 +1,8 @@
 
-window.onload = function() {
+window.onload = navigation;
+
+//
+ function navigation() {
     // Everything is fully loaded now
     const logo = document.getElementById('cy-logo');
     
@@ -27,13 +30,15 @@ window.onload = function() {
 
     const profname = document.getElementById('account-name');
 
-    if (profname) {
+    if (profname.textContent === "My-name") {
         profname.addEventListener('click', () => {
             window.location.href = 'signup.html';
         });
     }
 
   };
+
+
 
   
   // Initially hide all dropdowns
@@ -97,3 +102,4 @@ document.querySelectorAll('.navigation-h1').forEach(item => {
         window.location.href = url;
     });
 });
+

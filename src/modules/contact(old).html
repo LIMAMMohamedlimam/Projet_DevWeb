@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire de contact CY PC-Play</title>
+    <link rel="stylesheet" href="/src/css/contact-style.css">
+    
+</head>
+<body>
+    <!-- Le header -->
+    <header></header>
+
+    <!-- Formulaire de contact -->
+    <main>
+        <center><h1>Contactez-nous, on vous écoute</h1></center><br><br>
+
+        <form action="" method="post" onsubmit="return validateForm()">
+            <label for="date">Date de contact :</label>
+            <input id="date" type="text" name="date">
+            <span id="dateError"></span><br>
+            
+            <label for="nom">Nom :</label>
+            <input id="nom" type="text" name="nom">
+            <span id="nomError"></span><br>
+            
+            <label for="prenom">Prénom :</label>
+            <input id="prenom" type="text" name="prenom">
+            <span id="prenomError"></span><br>
+            
+            <label for="mail">Email :</label>
+            <input id="mail" type="text" name="mail">
+            <span id="mailError"></span><br>
+            
+            <!-- Radio buttons and other inputs -->
+            
+            <label for="naissance">Date de naissance:</label>
+            <input id="naissance" type="text" name="naissance">
+            <span id="naissanceError"></span><br>
+            
+            <!-- Select dropdown -->
+            
+            <label for="sujet">Sujet :</label>
+            <input id="sujet" type="text" name="sujet">
+            <span id="sujetError"></span><br>
+            
+            <label for="message">Contenu :</label>
+            <textarea id="message" name="message" rows="5" cols="75"></textarea>
+            <span id="messageError"></span><br>
+            
+            <center><input type="submit" value="Envoyer"></center>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+    <script src="/src/Js/contact.js"></script>
+</body>
+</html>
